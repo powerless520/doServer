@@ -1,6 +1,9 @@
 package route
 
-import "github.com/gin-gonic/gin"
+import (
+	"doServer/dml"
+	"github.com/gin-gonic/gin"
+)
 
 func Init(app *gin.Engine) {
 
@@ -16,5 +19,6 @@ func Init(app *gin.Engine) {
 		apiGroup.GET("/login", func(context *gin.Context) {
 			context.String(200, "login")
 		})
+		apiGroup.GET("/sys_user", dml.QueryDemo)
 	}
 }
